@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<title>Ariella’s Bat Mitzvah</title>
+<link rel="shortcut icon" type="image/svg+xml" href="BigA.svg">
+<script type="text/javascript" src="https://okazari.github.io/Rythm.js/rythm.js"></script>
+<script type="text/javascript">
+	
+var rythm = new Rythm();
+var audio = document.getElementById('audio');
+rythm.setMusic('https://okazari.github.io/Rythm.js//samples/rythmC.mp3');
+rythm.start();
+</script>
+	
+
+<style>
+	
+body{ 
+  background-color: #ADA1C7;	
+ }
+	
+html {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+	
+.scaling-container{
+ position: relative; 
+ height: 0; 
+ width: 100%; 
+ padding: 0;
+ margin:auto;
+ align-content: center;
+ z-index: 2;
+ /* override this inline for aspect ratio other than square */
+}
+	
+.scaling {
+ position: absolute; 
+ height: 100%; 
+ width: 100%; 
+ left: 0; 
+ top: 0;
+ margin:auto;
+ align-content: center;
+}
+	
+img {
+display: block;
+ margin:auto;
+ align-content: center;
+ text-align: center;
+  width: 60vw;
+}
+
+	.ripple {
+		position: fixed;
+		display: block;
+		z-index: 1;
+	}
+	
+</style>
+
+<body>
+
+	<svg class="ripple" expanded = "true" height = "100%" width = "100%">
+		<circle class = "innerCircle" cx = "50%" cy = "50%" r = "25%" fill = "none" stroke = "#9090b0" stroke-width = "5%">
+		  <animate attributeType="SVG" attributeName="r" begin="0s" dur=".8s" repeatCount="indefinite" from="5%" to="40%"/>
+		  <animate attributeType="CSS" attributeName="stroke-width" begin="0s"  dur=".8s" repeatCount="indefinite" from="3%" to="0%" />
+		  <animate attributeType="CSS" attributeName="opacity" begin="0s"  dur=".8s" repeatCount="indefinite" from=".6" to="0"/>
+		</circle>
+	</svg>
+		
+	<div class="scaling-container" >
+		
+		<img class="rythm-bass" src="ariellas.svg" />
+		<img class="rythm-high" src="date.svg" />
+
+	</div>
+	
+</body>
+
+</html>
