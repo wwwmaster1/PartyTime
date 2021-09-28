@@ -4,13 +4,7 @@
 <title>Ariella’s Bat Mitzvah</title>
 <link rel="shortcut icon" type="image/svg+xml" href="BigA.svg">
 <script type="text/javascript" src="https://okazari.github.io/Rythm.js/rythm.js"></script>
-<script type="text/javascript">
-	
-var rythm = new Rythm();
-var audio = document.getElementById('audio');
-rythm.setMusic('dance.mp3');
-rythm.start();
-</script>
+
 	
 
 <style>
@@ -74,11 +68,22 @@ display: block;
 		
 	<div class="scaling-container" >
 		
-		<img class="rythm-bass" src="ariellas.svg" onclick="rythm.start();" />
+		<img class="rythm-bass" src="ariellas.svg" id="playAudio" />
 		<img class="rythm-high" src="date.svg" />
 
 	</div>
-	
+
+	<script type="text/javascript">
+
+		var rythm = new Rythm();
+		var audio = document.getElementById('audio');
+		rythm.setMusic('dance.mp3');
+
+		document.getElementById('playAudio').addEventListener('click', function (){
+			rythm.start();
+		})
+	</script>
+
 </body>
 
 </html>
