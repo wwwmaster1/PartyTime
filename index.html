@@ -207,18 +207,15 @@ display: block;
 
 	<script type="text/javascript">
 
-		var rythm = new Rythm();
-		var audio = document.getElementById('audio');
-		rythm.setMusic('dance.mp3');
-
-		document.getElementById('playAudio').addEventListener('click', function (){
-			
-		})
-		
 		$('.toggle').click(function(e){
 		  e.preventDefault(); // The flicker is a codepen thing
 		  $(this).toggleClass('toggle-on');
+		
+		  var rythm = new Rythm();
+		  var audio = document.getElementById('audio');
+		  rythm.setMusic('dance.mp3');
 		  rythm.start();
+			
 		  $('.reveal').show();
 		  $('.initial').hide();
 		});
