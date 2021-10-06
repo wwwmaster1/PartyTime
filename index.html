@@ -176,7 +176,7 @@ display: block;
 	.reveal { display: none; }
 	
 </style>
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <body>
 
 	<svg class="ripple" expanded = "true" height = "100%" width = "100%">
@@ -212,12 +212,13 @@ display: block;
 		rythm.setMusic('dance.mp3');
 
 		document.getElementById('playAudio').addEventListener('click', function (){
-			rythm.start();
+			
 		})
 		
 		$('.toggle').click(function(e){
 		  e.preventDefault(); // The flicker is a codepen thing
 		  $(this).toggleClass('toggle-on');
+		  rythm.start();
 		});
 		
 	</script>
