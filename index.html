@@ -31,6 +31,7 @@ html {
     left: calc(71vw - 500px);
     width: 450px;
     height: 60px;
+    z-index: 100;
 }
 
 .toggle {
@@ -264,8 +265,8 @@ display: block;
 		  rythm.setMusic('dance.mp3');
 		  rythm.start();
 		
-	  	  $('#switch').animate({top: "0vw"}, 1000);
-		  $('.reveal').show("slow");
+	  	  $('#switch').animate({top: "0vw"}, 1000,$('.reveal').show(1000));
+
 		});
 		
 	</script>
