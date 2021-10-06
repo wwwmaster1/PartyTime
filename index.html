@@ -148,7 +148,7 @@
 
     .scaling-container {
         position: relative;
-        min-height: 100vh;
+        min-height: 98vh;
 	    display: flex;
         align-items: center;
         width: 100%;
@@ -174,7 +174,7 @@
         margin: auto;
         align-content: center;
         text-align: center;
-        width: 50vw;
+        width: 46vw;
     }
 
 
@@ -187,10 +187,11 @@
 
     .reveal {
         display: none;
+        text-align: center;
         width: 100%
     }
 
-    .btnn2 {
+    /*.btnn2 {
         font-family: 'Quicksand', sans-serif;
         margin: 0 38%;
         z-index: 0;
@@ -201,8 +202,7 @@
         -webkit-transition: all 500ms ease;
         transition: all 500ms ease;
         background-color: white;
-        border-width: .5vw;
-        border-style: solid;
+
         width: 23vw;
         height: 4vw;
         line-height: 4vw;
@@ -212,15 +212,69 @@
         text-transform: capitalize;
         font-weight: 800;
         cursor: pointer;
+         border-width: .5vw;
+        border-style: solid;
         border-color: #000;
         color: #BB85B9 !important;
-    }
+    }*/
 
+    /*.btnn2:after {*/
+    /*    border: 0 solid rgba(187, 133, 185, 0.1);*/
+    /*    z-index: -1;*/
+    /*    content: "";*/
+    /*    position: absolute;*/
+    /*    width: 0;*/
+    /*    height: 0;*/
+    /*    top: -999px;*/
+    /*    left: -999px;*/
+    /*    right: -999px;*/
+    /*    bottom: -999px;*/
+    /*    margin: auto;*/
+    /*    border-radius: 50%;*/
+    /*    -webkit-transition: border 100ms ease;*/
+    /*    transition: border 100ms ease;*/
+    /*}*/
+
+
+
+    .btnn2 {
+        margin: 5px;
+        z-index: 0;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 200px;
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+        background-color: transparent;
+        padding: 1vw 2vw;
+        line-height: 1;
+        text-align: center;
+        font-size: calc(0.6vw + 0.6vh + 8px);
+        text-decoration: none;
+        text-transform: capitalize;
+        font-weight: 800;
+        cursor: pointer;
+        color: #BB85B9;
+        border-width: .5vw;
+        border-style: solid;
+        border-color: #000;
+        background-color: white;
+        font-family: 'Quicksand', sans-serif;
+    }
+    .btnn2 span{
+        z-index: 20;
+        position: relative;
+    }
+    .btnn2:hover {
+        color: white !important;
+        background-color: #BB85B9;
+    }
     .btnn2:after {
         border: 0 solid rgba(187, 133, 185, 0.1);
-        z-index: -1;
         content: "";
         position: absolute;
+        z-index: 10;
         width: 0;
         height: 0;
         top: -999px;
@@ -232,6 +286,13 @@
         -webkit-transition: border 100ms ease;
         transition: border 100ms ease;
     }
+    .btnn2:hover:after {
+        border: 0 solid #bb85b9;
+        border-width: 200px;
+        -webkit-transition: border 380ms ease;
+        transition: border 380ms ease;
+    }
+
 
     @media (max-width: 900px) {
         img {
@@ -240,6 +301,9 @@
         }
         #switch{
             transform: translate(-50%) scale(0.8);
+        }
+        .btnn2{
+            font-size: calc(1.5vw + 1vh + 8px);
         }
     }
 
@@ -279,7 +343,7 @@
         <img class="rythm-high" src="date.svg"/>
         <A class="btnn2 b2o"
            href="https://be.synxis.com/?Hotel=6050&Chain=5157&arrive=3/3/2022&depart=3/8/2022&adult=1&child=0&group=03022022ARIE"
-           target="blank">Book A Room</A>
+           target="blank"><span>Book A Room</span></A>
     </div>
 
 </div>
