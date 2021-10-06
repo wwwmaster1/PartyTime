@@ -3,7 +3,10 @@
 <html>
 <title>Ariella’s Bat Mitzvah</title>
 <link rel="shortcut icon" type="image/svg+xml" href="BigA.svg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
 	
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://okazari.github.io/Rythm.js/rythm.js"></script>
@@ -23,22 +26,20 @@ html {
   justify-content: center;
 }
 
-#switch{
+#switch {
     top: 50%;
     left: 50%;
-    width: 195px;
-    height: 40px;
+    width: 450px;
+    height: 60px;
 }
-
-.toggle{
+.toggle {
     position: fixed;
-    border: 2px solid #444249;
-    border-radius: 20px;
-    -webkit-transition: border-color .6s  ease-out;
-    transition: border-color .6s  ease-out;
+    border: 3px solid #444249;
+    border-radius: 50px;
+    -webkit-transition: border-color .6s ease-out;
+    transition: border-color .6s ease-out;
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
 }
 
 .toggle.toggle-on{
@@ -47,17 +48,18 @@ html {
     transition: all .5s .15s ease-out;
 }
 
-.toggle-button{
+.toggle-button {
     position: absolute;
     top: 4px;
-    width: 28px;
+    width: 45px;
     bottom: 4px;
-    right: 159px;
+    right: 393px;
     background-color: #444249;
-    border-radius: 19px; 
+    border-radius: 45px;
     cursor: pointer;
     -webkit-transition: all .3s .1s, width .1s, top .1s, bottom .1s;
     transition: all .3s .1s, width .1s, top .1s, bottom .1s;
+    height: 45px;
 }
 
 .toggle-on .toggle-button{
@@ -263,7 +265,7 @@ display: block;
 		  rythm.setMusic('dance.mp3');
 		  rythm.start();
 			
-		  $('.reveal').show("slow","swing",$('.initial').hide());
+		  $('.reveal').show("slow",$('.initial').hide(1000));
 		});
 		
 	</script>
