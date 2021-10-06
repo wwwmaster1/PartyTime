@@ -264,8 +264,9 @@ display: block;
 		  var audio = document.getElementById('audio');
 		  rythm.setMusic('dance.mp3');
 		  rythm.start();
-			
-		  $('.reveal').show("slow",$('.initial').show(1000));
+		
+	  	  $('.initial').animate({top: "0vw"}, 1000);
+		  $('.reveal').show("slow");
 		});
 		
 	</script>
