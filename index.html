@@ -179,6 +179,57 @@ display: block;
 	}
 	.reveal { display: none; }
 	
+	
+	.btnn2 {
+	    margin: 5px;
+	    z-index: 0;
+	    display: inline-block;
+	    position: relative;
+	    overflow: hidden;
+	    border-radius: 15px;
+	    -webkit-transition: all 500ms ease;
+	    transition: all 500ms ease;
+	    background-color: transparent;
+	    border-width: 2px;
+	    border-style: solid;
+	    width: 250px;
+	    height: 60px;
+	    line-height: 55px;
+	    text-align: center;
+	    font-size: 15px;
+	    text-decoration: none;
+	    text-transform: capitalize;
+	    font-weight: 800;
+	    cursor: pointer;
+	    border-color: #BB85B9;
+	    color: #BB85B9 !important;
+	}
+
+	.b2o:after {
+	    border: 0 solid rgba(242, 189, 122, 0.1);
+	    z-index: -1;
+	    content: "";
+	    -webkit-transition: border 100ms ease;
+	    transition: border 100ms ease;
+	}
+
+	.btnn2:after {
+	    border: 0 solid rgba(187, 133, 185, 0.1);
+	    z-index: -1;
+	    content: "";
+	    position: absolute;
+	    width: 0;
+	    height: 0;
+	    top: -999px;
+	    left: -999px;
+	    right: -999px;
+	    bottom: -999px;
+	    margin: auto;
+	    border-radius: 50%;
+	    -webkit-transition: border 100ms ease;
+	    transition: border 100ms ease;
+	}	
+	
 </style>
 <body>
 
@@ -204,7 +255,7 @@ display: block;
 	    <div class="reveal">
 		<img class="rythm-bass" src="ariellas.svg" id="playAudio" />
 		<img class="rythm-high" src="date.svg" />
-		<A class="butty" href="https://be.synxis.com/?Hotel=6050&Chain=5157&arrive=3/3/2022&depart=3/8/2022&adult=1&child=0&group=03022022ARIE" target="blank">Book A Room</A>
+		<A class="btnn2 b2o" href="https://be.synxis.com/?Hotel=6050&Chain=5157&arrive=3/3/2022&depart=3/8/2022&adult=1&child=0&group=03022022ARIE" target="blank">Book A Room</A>
 	    </div>
 
 	</div>
