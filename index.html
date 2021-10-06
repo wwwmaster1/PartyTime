@@ -7,277 +7,294 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
-	
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://okazari.github.io/Rythm.js/rythm.js"></script>
 
 
-
 <style>
-	
-body{ 
-    height: 100%;
-  background-color: #ADA1C7;	
- }
-	
-html {
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
 
-#switch {
-    top: 50vh;
-    left: calc(71vw - 500px);
-    width: 500px;
-    height: 60px;
-    z-index: 100;
-}
+    body {
+        height: 100%;
+        background-color: #ADA1C7;
+    }
 
-.toggle {
-    position: absolute;
-    border: 3px solid #444249;
-    border-radius: 50px;
-    -webkit-transition: border-color .6s ease-out;
-    transition: border-color .6s ease-out;
-    box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
-}
+    html {
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 
-.toggle.toggle-on{
-    border-color: rgba(137, 194, 217, .4);
-    -webkit-transition: all .5s .15s ease-out;
-    transition: all .5s .15s ease-out;
-}
+    #switch {
+        top: 50vh;
+        left: 50%;
+	    transform: translate(-50%);
+        width: 500px;
+        height: 60px;
+        z-index: 100;
+    }
 
-.toggle-button {
-    position: absolute;
-    top: 4px;
-    width: 45px;
-    bottom: 4px;
-    right: 445px;
-    background-color: #444249;
-    border-radius: 45px;
-    cursor: pointer;
-    -webkit-transition: all .3s .1s, width .1s, top .1s, bottom .1s;
-    transition: all .3s .1s, width .1s, top .1s, bottom .1s;
-    height: 45px;
-}
+    .toggle {
+        position: absolute;
+        border: 3px solid #444249;
+        border-radius: 50px;
+        -webkit-transition: border-color .6s ease-out;
+        transition: border-color .6s ease-out;
+        box-sizing: border-box;
+        font-family: 'Quicksand', sans-serif;
+    }
 
-.toggle-on .toggle-button{
-    top: 3px;
-    width: 500px;
-    bottom: 3px;
-    right: 3px;
-    border-radius: 23px;
-    background-color: #89c2da;
-    box-shadow: 0 0 16px #4b7a8d;
-    -webkit-transition: all .2s .1s, right .1s;
-    transition: all .2s .1s, right .1s;
-}
+    .toggle.toggle-on {
+        border-color: rgba(137, 194, 217, .4);
+        -webkit-transition: all .5s .15s ease-out;
+        transition: all .5s .15s ease-out;
+    }
 
+    .toggle-button {
+        position: absolute;
+        top: 4px;
+        width: 45px;
+        bottom: 4px;
+        right: 445px;
+        background-color: #444249;
+        border-radius: 45px;
+        cursor: pointer;
+        -webkit-transition: all .3s .1s, width .1s, top .1s, bottom .1s;
+        transition: all .3s .1s, width .1s, top .1s, bottom .1s;
+        height: 45px;
+    }
 
-.toggle-text-on{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    line-height: 52px;
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 40px;
-    cursor: pointer;
-    -webkit-user-select: none; /* Chrome/Safari */    
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
+    .toggle-on .toggle-button {
+        top: 3px;
+        width: 500px;
+        bottom: 3px;
+        right: 3px;
+        border-radius: 23px;
+        background-color: #89c2da;
+        box-shadow: 0 0 16px #4b7a8d;
+        -webkit-transition: all .2s .1s, right .1s;
+        transition: all .2s .1s, right .1s;
+    }
 
 
-    color: rgba(0,0,0,0);
-}
-
-.toggle-on .toggle-text-on{
-    color: #3b6a7d;
-    -webkit-transition: color .3s .15s ;
-    transition: color .3s .15s ;
-}
-
-.toggle-text-off {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 11px;
-    line-height: 52px;
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: pointer;
-    color: #444249;
-}
-
-.toggle-on .toggle-text-off{
-    color: rgba(0,0,0,0);
-}
-
-/* used for streak effect */
-.glow-comp{
-    position: absolute;
-    opacity: 0;
-    top: 10px;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    border-radius: 6px;
-    background-color: rgba(75, 122, 141, .1);
-    box-shadow: 0 0 12px rgba(75, 122, 141, .2);
-    -webkit-transition: opacity 4.5s 1s;
-    transition: opacity 4.5s 1s;
-}
-
-.toggle-on .glow-comp{
-    opacity: 1;
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
-}
-	
-	
-.scaling-container{
- position: relative; 
- height: 0; 
- width: 100%; 
- padding: 0;
- margin:auto;
- align-content: center;
- z-index: 2;
- /* override this inline for aspect ratio other than square */
-}
-	
-.scaling {
- position: absolute; 
- height: 100%; 
- width: 100%; 
- left: 0; 
- top: 0;
- margin:auto;
- align-content: center;
-}
-	
-img {
-display: block;
- margin:auto;
- align-content: center;
- text-align: center;
-  width: 50vw;
-}
+    .toggle-text-on {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        line-height: 52px;
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 40px;
+        cursor: pointer;
+        -webkit-user-select: none; /* Chrome/Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
 
 
-	.ripple {
-		position: fixed;
-		display: block;
-		z-index: 1;
-	}
-	.reveal { display: none; }
-	
-	.btnn2 {
-    	    font-family: 'Quicksand', sans-serif;
-	    margin: 0 38%;
-	    z-index: 0;
-	    display: inline-block;
-	    position: inherit;
-	    overflow: hidden;
-	    border-radius: 31px;
-	    -webkit-transition: all 500ms ease;
-	    transition: all 500ms ease;
-	    background-color: white;
-	    border-width: .5vw;
-	    border-style: solid;
-	    width: 23vw;
-	    height: 4vw;
-	    line-height: 4vw;
-	    text-align: center;
-	    font-size: 3vw;
-	    text-decoration: none;
-	    text-transform: capitalize;
-	    font-weight: 800;
-	    cursor: pointer;
-	    border-color: #000;
-	    color: #BB85B9 !important;
-	}
+        color: rgba(0, 0, 0, 0);
+    }
 
-	.btnn2:after {
-	    border: 0 solid rgba(187, 133, 185, 0.1);
-	    z-index: -1;
-	    content: "";
-	    position: absolute;
-	    width: 0;
-	    height: 0;
-	    top: -999px;
-	    left: -999px;
-	    right: -999px;
-	    bottom: -999px;
-	    margin: auto;
-	    border-radius: 50%;
-	    -webkit-transition: border 100ms ease;
-	    transition: border 100ms ease;
-	}	
-	
-@media screen and (max-width: 900px) {
-	img {margin-top:50px; width: 70vw;}
-}
+    .toggle-on .toggle-text-on {
+        color: #3b6a7d;
+        -webkit-transition: color .3s .15s;
+        transition: color .3s .15s;
+    }
+
+    .toggle-text-off {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 11px;
+        line-height: 52px;
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        cursor: pointer;
+        color: #444249;
+    }
+
+    .toggle-on .toggle-text-off {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    /* used for streak effect */
+    .glow-comp {
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        border-radius: 6px;
+        background-color: rgba(75, 122, 141, .1);
+        box-shadow: 0 0 12px rgba(75, 122, 141, .2);
+        -webkit-transition: opacity 4.5s 1s;
+        transition: opacity 4.5s 1s;
+    }
+
+    .toggle-on .glow-comp {
+        opacity: 1;
+        -webkit-transition: opacity 1s;
+        transition: opacity 1s;
+    }
+
+
+    .scaling-container {
+        position: relative;
+        min-height: 100vh;
+	    display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: auto;
+        align-content: center;
+        z-index: 2;
+        /* override this inline for aspect ratio other than square */
+    }
+
+    .scaling {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        margin: auto;
+        align-content: center;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        align-content: center;
+        text-align: center;
+        width: 50vw;
+    }
+
+
+
+    .ripple {
+        position: fixed;
+        display: block;
+        z-index: 1;
+    }
+
+    .reveal {
+        display: none;
+        width: 100%
+    }
+
+    .btnn2 {
+        font-family: 'Quicksand', sans-serif;
+        margin: 0 38%;
+        z-index: 0;
+        display: inline-block;
+        position: inherit;
+        overflow: hidden;
+        border-radius: 31px;
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+        background-color: white;
+        border-width: .5vw;
+        border-style: solid;
+        width: 23vw;
+        height: 4vw;
+        line-height: 4vw;
+        text-align: center;
+        font-size: 3vw;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-weight: 800;
+        cursor: pointer;
+        border-color: #000;
+        color: #BB85B9 !important;
+    }
+
+    .btnn2:after {
+        border: 0 solid rgba(187, 133, 185, 0.1);
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: -999px;
+        left: -999px;
+        right: -999px;
+        bottom: -999px;
+        margin: auto;
+        border-radius: 50%;
+        -webkit-transition: border 100ms ease;
+        transition: border 100ms ease;
+    }
+
+    @media (max-width: 900px) {
+        img {
+            margin-top: 50px;
+            width: 78vw;
+        }
+    }
+
+
 </style>
 <body>
 
-	<svg class="ripple" expanded = "true" height = "100%" width = "100%">
-		<circle class = "innerCircle" cx = "50%" cy = "50%" r = "25%" fill = "none" stroke = "#9090b0" stroke-width = "5%">
-		  <animate attributeType="SVG" attributeName="r" begin="0s" dur=".8s" repeatCount="indefinite" from="5%" to="40%"/>
-		  <animate attributeType="CSS" attributeName="stroke-width" begin="0s"  dur=".8s" repeatCount="indefinite" from="3%" to="0%" />
-		  <animate attributeType="CSS" attributeName="opacity" begin="0s"  dur=".8s" repeatCount="indefinite" from=".6" to="0"/>
-		</circle>
-	</svg>
-	
-	
-		
-	<div class="scaling-container">
-	    <div class="initial">
-		<div class='toggle' id='switch'>
-				<div class='toggle-text-off'>PARTY MODE IS OFF</div>
-				<div class='glow-comp'></div>
-				<div class='toggle-button'></div>
-				<div class='toggle-text-on'>THE PARTY IS ON!</div>
-		</div>
-	    </div>
-	    <div class="reveal">
-		<img class="rythm-bass" src="ariellas.svg" id="playAudio" />
-		<img class="rythm-high" src="date.svg" />
-		<A class="btnn2 b2o" href="https://be.synxis.com/?Hotel=6050&Chain=5157&arrive=3/3/2022&depart=3/8/2022&adult=1&child=0&group=03022022ARIE" target="blank">Book A Room</A>
-	    </div>
+<svg class="ripple" expanded="true" height="100%" width="100%">
+    <circle class="innerCircle" cx="50%" cy="50%" r="25%" fill="none" stroke="#9090b0" stroke-width="5%">
+        <animate attributeType="SVG" attributeName="r" begin="0s" dur=".8s" repeatCount="indefinite" from="5%"
+                 to="40%"/>
+        <animate attributeType="CSS" attributeName="stroke-width" begin="0s" dur=".8s" repeatCount="indefinite"
+                 from="3%" to="0%"/>
+        <animate attributeType="CSS" attributeName="opacity" begin="0s" dur=".8s" repeatCount="indefinite" from=".6"
+                 to="0"/>
+    </circle>
+</svg>
 
-	</div>
 
-	<script type="text/javascript">
+<div class="scaling-container">
+    <div class="initial">
+        <div class='toggle' id='switch'>
+            <div class='toggle-text-off'>PARTY MODE IS OFF</div>
+            <div class='glow-comp'></div>
+            <div class='toggle-button'></div>
+            <div class='toggle-text-on'>THE PARTY IS ON!</div>
+        </div>
+    </div>
+    <div class="reveal">
+        <img class="rythm-bass" src="ariellas.svg" id="playAudio"/>
+        <img class="rythm-high" src="date.svg"/>
+        <A class="btnn2 b2o"
+           href="https://be.synxis.com/?Hotel=6050&Chain=5157&arrive=3/3/2022&depart=3/8/2022&adult=1&child=0&group=03022022ARIE"
+           target="blank">Book A Room</A>
+    </div>
 
-		$('.toggle').click(function(e){
-		  e.preventDefault(); // The flicker is a codepen thing
-		  $(this).toggleClass('toggle-on');
-		
-		  var rythm = new Rythm();
-		  var audio = document.getElementById('audio');
-		  rythm.setMusic('dance.mp3');
-		  rythm.start();
-		
-	  	  $('#switch').animate({top: "0vw"}, 1000);
-		  $('.reveal').show(1000);
-			
-		
-		  $('.toggle-text-off').text( "PARTY CAN'T STOP" );
+</div>
 
-		});
-		
-	</script>
+<script type="text/javascript">
+
+	$('.toggle').click(function (e) {
+		e.preventDefault(); // The flicker is a codepen thing
+		$(this).toggleClass('toggle-on');
+
+		var rythm = new Rythm();
+		var audio = document.getElementById('audio');
+		rythm.setMusic('dance.mp3');
+		rythm.start();
+
+		$('#switch').animate({top: "0vw"}, 1000);
+		$('.reveal').show(1000);
+
+
+		$('.toggle-text-off').text("PARTY CAN'T STOP");
+
+	});
+
+</script>
 
 </body>
 
