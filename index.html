@@ -308,22 +308,26 @@
 
 <script type="text/javascript">
 
+    var alreadyPlaying = false;
+
 	$('.toggle').click(function (e) {
 		e.preventDefault(); // The flicker is a codepen thing
 		$(this).toggleClass('toggle-on');
+		if(!alreadyPlaying){
+			alreadyPlaying = true;
+			startMusic();
+        }
+		$('#switch').animate({top: "0vw"}, 1000);
+		$('.reveal').show(1000);
+		$('.toggle-text-off').text("PARTY CAN'T STOP");
+	});
 
+	function startMusic() {
 		var rythm = new Rythm();
 		var audio = document.getElementById('audio');
 		rythm.setMusic('dance.mp3');
 		rythm.start();
-
-		$('#switch').animate({top: "0vw"}, 1000);
-		$('.reveal').show(1000);
-
-
-		$('.toggle-text-off').text("PARTY CAN'T STOP");
-
-	});
+    }
 
 </script>
 
